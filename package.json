@@ -1,5 +1,5 @@
 {
-  "name": "import-repo",
+  "name": "@luckysfwpexperts/import-repo",
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -7,11 +7,9 @@
     "dist",
     "README.md"
   ],
-
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/luckysfwpexperts"
+    "registry": "https://npm.pkg.github.com"
   },
-
   "type": "module",
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
@@ -38,7 +36,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luckysfwpexperts/import-repo.git"
+    "url": "git+https://github.com/luckysfwpexperts/import-repo.git"
   },
   "homepage": "https://github.com/luckysfwpexperts/import-repo#readme",
   "bugs": {
