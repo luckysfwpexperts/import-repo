@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Import Repo
 
-## Getting Started
+A React component library built with TypeScript and Next.js, featuring Storybook for component development and documentation.
 
-First, run the development server:
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install import-repo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Peer Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This package requires the following peer dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install react react-dom next
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { Card, greet } from 'import-repo';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+// Use the Card component
+<Card 
+  title="My Card" 
+  description="A beautiful card component"
+  variant="elevated"
+  onClick={() => console.log('Card clicked')}
+/>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+// Use utility functions
+const message = greet('World'); // "Hello, World!"
+```
 
-## Deploy on Vercel
+## Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Card
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A flexible card component with multiple variants:
+
+- `default` - Basic card with border
+- `outlined` - Card with blue outline
+- `elevated` - Card with shadow
+
+#### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | - | Card title (required) |
+| `description` | `string` | - | Card description (optional) |
+| `variant` | `'default' \| 'outlined' \| 'elevated'` | `'default'` | Card style variant |
+| `onClick` | `() => void` | - | Click handler (optional) |
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start Storybook
+npm run storybook
+
+# Build the library
+npm run build
+
+# Run linting
+npm run lint
+```
+
+## Storybook
+
+This library includes Storybook for component development and documentation. Start the development server:
+
+```bash
+npm run storybook
+```
+
+Visit http://localhost:6006 to view the component stories.
+
+## License
+
+MIT

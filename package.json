@@ -1,21 +1,50 @@
 {
   "name": "import-repo",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+
+  "type": "module",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "next": "^14.0.0 || ^15.0.0"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
+    "build": "tsc --project tsconfig.build.json",
+    "dev": "tsc --build --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "lint": "eslint src/**/*.{ts,tsx}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "keywords": [
+    "react",
+    "nextjs",
+    "components",
+    "ui",
+    "storybook"
+  ],
+  "author": "Lucky",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luckysfwpexperts/import-repo.git"
+  },
+  "homepage": "https://github.com/luckysfwpexperts/import-repo#readme",
+  "bugs": {
+    "url": "https://github.com/luckysfwpexperts/import-repo/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "next": "15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
-  },
-  "devDependencies": {
+    "react-dom": "19.1.0",
     "@chromatic-com/storybook": "^4.1.1",
     "@eslint/eslintrc": "^3",
     "@storybook/addon-a11y": "^9.1.3",
