@@ -8,6 +8,10 @@
     "README.md"
   ],
 
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/luckysfwpexperts"
+  },
+
   "type": "module",
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
